@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MapDBModelStoreContainer" CdmEntityContainer="MapDBEntities">
+    <EntitySetMapping Name="ConnectedNodes">
+      <EntityTypeMapping TypeName="MapDBModel.ConnectedNode">
+        <MappingFragment StoreEntitySet="ConnectedNode">
+          <ScalarProperty Name="CurrentNode" ColumnName="CurrentNode" />
+          <ScalarProperty Name="ConnectedTo" ColumnName="ConnectedTo" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="MapDBModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentX" ColumnName="DepartmentX" />
+          <ScalarProperty Name="DepartmentY" ColumnName="DepartmentY" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StreetNodes">
+      <EntityTypeMapping TypeName="MapDBModel.StreetNode">
+        <MappingFragment StoreEntitySet="StreetNode">
+          <ScalarProperty Name="StreetNodeX" ColumnName="StreetNodeX" />
+          <ScalarProperty Name="StreetNodeY" ColumnName="StreetNodeY" />
+          <ScalarProperty Name="StreetNodeID" ColumnName="StreetNodeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MapDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

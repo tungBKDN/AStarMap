@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MapDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ConnectedNode">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="CurrentNode" Type="Int32" Nullable="false" />
+    <Property Name="ConnectedTo" Type="Int32" Nullable="false" />
+    <Property Name="RecordID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="StreetNode" Relationship="Self.FK_ConnectedNode_StreetNode" FromRole="ConnectedNode" ToRole="StreetNode" />
+    <NavigationProperty Name="StreetNode1" Relationship="Self.FK_ConnectedNode_StreetNode1" FromRole="ConnectedNode" ToRole="StreetNode" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentX" Type="Double" Nullable="false" />
+    <Property Name="DepartmentY" Type="Double" Nullable="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StreetNode">
+    <Key>
+      <PropertyRef Name="StreetNodeID" />
+    </Key>
+    <Property Name="StreetNodeX" Type="Double" Nullable="false" />
+    <Property Name="StreetNodeY" Type="Double" Nullable="false" />
+    <Property Name="StreetNodeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ConnectedNodes" Relationship="Self.FK_ConnectedNode_StreetNode" FromRole="StreetNode" ToRole="ConnectedNode" />
+    <NavigationProperty Name="ConnectedNodes1" Relationship="Self.FK_ConnectedNode_StreetNode1" FromRole="StreetNode" ToRole="ConnectedNode" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_ConnectedNode_StreetNode">
+    <End Role="StreetNode" Type="Self.StreetNode" Multiplicity="1" />
+    <End Role="ConnectedNode" Type="Self.ConnectedNode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StreetNode">
+        <PropertyRef Name="StreetNodeID" />
+      </Principal>
+      <Dependent Role="ConnectedNode">
+        <PropertyRef Name="ConnectedTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConnectedNode_StreetNode1">
+    <End Role="StreetNode" Type="Self.StreetNode" Multiplicity="1" />
+    <End Role="ConnectedNode" Type="Self.ConnectedNode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StreetNode">
+        <PropertyRef Name="StreetNodeID" />
+      </Principal>
+      <Dependent Role="ConnectedNode">
+        <PropertyRef Name="CurrentNode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MapDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ConnectedNodes" EntityType="Self.ConnectedNode" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="StreetNodes" EntityType="Self.StreetNode" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_ConnectedNode_StreetNode" Association="Self.FK_ConnectedNode_StreetNode">
+      <End Role="StreetNode" EntitySet="StreetNodes" />
+      <End Role="ConnectedNode" EntitySet="ConnectedNodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConnectedNode_StreetNode1" Association="Self.FK_ConnectedNode_StreetNode1">
+      <End Role="StreetNode" EntitySet="StreetNodes" />
+      <End Role="ConnectedNode" EntitySet="ConnectedNodes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

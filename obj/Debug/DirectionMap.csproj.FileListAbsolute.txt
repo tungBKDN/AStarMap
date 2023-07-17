@@ -1,0 +1,16 @@
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectionMap.csproj.AssemblyReference.cache
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectionMap.csproj.SuggestedBindingRedirects.cache
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectMap.Form1.resources
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectionMap.Properties.Resources.resources
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectionMap.csproj.GenerateResource.cache
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectionMap.csproj.CoreCompileInputs.cache
+D:\Cá nhân\BÁCH KHOA\DirectionMap\bin\Debug\DirectionMap.exe.config
+D:\Cá nhân\BÁCH KHOA\DirectionMap\bin\Debug\DirectionMap.exe
+D:\Cá nhân\BÁCH KHOA\DirectionMap\bin\Debug\DirectionMap.pdb
+D:\Cá nhân\BÁCH KHOA\DirectionMap\bin\Debug\EntityFramework.dll
+D:\Cá nhân\BÁCH KHOA\DirectionMap\bin\Debug\EntityFramework.SqlServer.dll
+D:\Cá nhân\BÁCH KHOA\DirectionMap\bin\Debug\EntityFramework.xml
+D:\Cá nhân\BÁCH KHOA\DirectionMap\bin\Debug\EntityFramework.SqlServer.xml
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectionMap.csproj.CopyComplete
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectionMap.exe
+D:\Cá nhân\BÁCH KHOA\DirectionMap\obj\Debug\DirectionMap.pdb
